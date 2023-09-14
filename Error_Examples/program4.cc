@@ -20,7 +20,7 @@ int main(int argc, char const *argv[])
         int x = 0;
         x++;
     }
-    cout << x << endl;
-    cout << i;
+    cout << "bam" << endl;
+
     return 0;
 } // main

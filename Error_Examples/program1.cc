@@ -19,6 +19,10 @@ int main(int argc, char const *argv[]) {
    for (int i; i < 10; i++)
    {
       x += 1;
+      if(i == 10)
+      {
+         cout << x << endl;
+      }
    }
 
    cout << x << endl;
