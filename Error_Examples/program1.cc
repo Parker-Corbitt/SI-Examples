@@ -25,7 +25,11 @@ int main(int argc, char const *argv[]) {
       }
    }
 
-   cout << x << endl;
+   /**if(i == 10)
+   {
+      cout << x << endl;
+   }
+   **/
    
    return 0;
 }// main
