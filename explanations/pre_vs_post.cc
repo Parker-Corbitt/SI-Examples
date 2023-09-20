@@ -31,40 +31,40 @@ int main(int argc, char const *argv[]) {
      */
 
 
-    for(int i = 0; i < 2; i++)
-    {
-        cout << x[i] << endl;
-        //cout << i << endl;
-    }
+    // for(int i = 0; i < 2; i++)
+    // {
+    //     cout << x[i] << endl;
+    //     //cout << i << endl;
+    // }
 
-    cout << endl;
+    // cout << endl;
 
-    for(int i = 0; i < 2; ++i)
-    {
-        cout << x[i] << endl;
-        //cout << i << endl;
-    }
+    // for(int i = 0; i < 2; ++i)
+    // {
+    //     cout << x[i] << endl;
+    //     //cout << i << endl;
+    // }
 
-    for(int i = 0; i < 2; i)
-    {
-        cout << "this is a loop" << endl;
-        i++;
-    }
+    // for(int i = 0; i < 2; i)
+    // {
+    //     cout << "this is a loop" << endl;
+    //     i++;
+    // }
 
-    cout << "**********************************************" << endl;
+    // cout << "**********************************************" << endl;
     
-    int a = 8;
+    // int a = 8;
     
-    int b = ++a;
+    // int b = ++a;
 
-    cout << "a = " << a << endl;
-    cout << "x = " << b << endl;
+    // cout << "a = " << a << endl;
+    // cout << "x = " << b << endl;
 
-    int d = 17;
-    int c = d++;
+    // int d = 17;
+    // int c = d++;
 
-    cout << "c = " << c << endl;
-    cout << "d = " << d << endl;
+    // cout << "c = " << c << endl;
+    // cout << "d = " << d << endl;
 
     return 0;
 }// main
