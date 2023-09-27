@@ -12,7 +12,10 @@ using namespace std;
 
 int main(int argc, char const *argv[]) {
 
-   cout << "Hello World" << endl;
-   cout <<"test 2" << endl;
+   string x = "Thank goodness that just  worked";
+   if(x.find('t'))
+   {
+      cout << "BANG" << endl;
+   }
    return 0;
 }
