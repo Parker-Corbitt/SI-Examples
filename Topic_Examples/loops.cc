@@ -15,5 +15,10 @@ using namespace std;
 int main(int argc, char const *argv[]) {
 
     
-    return 0;
+    for(int i = 0; i < 7; i++)
+    {
+        printf("i = %d\n", i);
+    }
+
 }// main
+
