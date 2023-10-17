@@ -2,7 +2,8 @@
  *        @file: integer_division.cc
  *      @author: Parker Corbitt
  *        @date: October 15, 2023
- *       @brief: Add Description
+ *       @brief: This code provides a number of examples
+ *                  for topics leading up to the CS2400 Midterm
  */
 
 #include <iostream>
