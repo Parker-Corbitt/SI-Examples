@@ -10,12 +10,10 @@
 #include <cstdlib>
 using namespace std;
 
-int main(int argc, char const *argv[]) {
+int main(int argc, char const *argv[])
+{
 
-   string x = "Thank goodness that just  worked";
-   if(x.find('t'))
-   {
-      cout << "BANG" << endl;
-   }
+   cout << "Hello World!" << endl;
+
    return 0;
 }
