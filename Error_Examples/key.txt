@@ -7,5 +7,8 @@ Program 3 shows erros in the boolean expressions by using assignment. Essentiall
     expressions are the same as using an int as a bool value. Anything other than 0 in c++
     is true, which is why those expressions evaluate to true.
 
-Program 4 & 5 - I have forgotten. If I remember, I will add their explanations. I think I 
+Porgram 4 is designed to show an incorrect method of assigning a new value to a variable
+
+Program 5 - I have forgotten. If I remember, I will add their explanations. I think I 
     changed them during the session, so I don't think they're what I originally had anyways.
+    As of right now, it looks correct.
