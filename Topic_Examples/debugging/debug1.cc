@@ -2,14 +2,14 @@
  *        @file: debug1.cc
  *      @author: Parker Corbitt
  *        @date: November 13, 2023
- *       @brief: Add Description
+ *       @brief: Needs extra implementation
  */
 
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
 #include <fstream>
-
+#include <cctype>
 using namespace std;
 
 /// function prototypes
@@ -18,8 +18,8 @@ int main(int argc, char const *argv[])
 {
 
     ifstream instream;
-    int element;
-    int sum;
+    string element;
+    int sum = 0;
 
     instream.open("input.txt");
     if (instream.fail())
@@ -27,12 +27,26 @@ int main(int argc, char const *argv[])
         cout << "Error opening file" << endl;
         exit(1);
     }
+    string number;
 
-    char delim;
-    while (!instream.eof())
+    while (instream >> element)
     {
-        instream >> element;
-        cout << element;
+
+        bool valid = true;
+        for (int i = 0; i < element.length(); i++)
+        {
+            if (!isdigit(element[i]))
+            {
+                valid = false;
+                break;
+            }
+        }
+
+        if (valid)
+        {
+            cout << "Adding valid number: " << element << std::endl;
+            sum += stoi(element);
+        }
     }
 
     cout << "Sum: " << sum << endl;
