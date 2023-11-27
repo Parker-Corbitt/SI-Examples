@@ -18,8 +18,9 @@ using namespace std;
 
 int main(int argc, char const *argv[]) {
 
-   car a;
+   car a = car();
    a.get_color();
    a.set_color(133, 146, 273);
+   a.print_color();
    return 0;
 }// main

@@ -27,3 +27,8 @@ void car::set_color(int r, int g, int b)
     color_value[1] = g;
     color_value[2] = b;
 }
+
+void car::print_color()
+{
+    cout << "Color: " << color_value[0] << ", " << color_value[1] << ", " << color_value[2] << endl;
+}

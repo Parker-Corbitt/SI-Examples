@@ -11,8 +11,9 @@ public:
     car();
     int* get_color();
     void set_color(int r, int g, int b);
+    void print_color();
 
 private:
-    int color_value[3] = {0, 0, 0};
+    int color_value[3];
 };
 
