@@ -125,7 +125,8 @@ void chooseQuest(Story &story)
    }
    else
    {
-      cout << "You have already completed this quest!" << endl << "The town sings your praises!" << endl;
+      cout << "You have already completed this quest!" << endl
+           << "The town sings your praises!" << endl;
    }
    return;
 }
@@ -135,6 +136,7 @@ void printQuests(Story &story)
    for (int i = 0; i < story.quests.size(); i++)
    {
       cout << i + 1 << ". " << story.quests[i].name << endl;
+      usleep(100000);
    }
    return;
 }
