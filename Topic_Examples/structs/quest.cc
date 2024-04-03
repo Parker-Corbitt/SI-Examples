@@ -106,6 +106,7 @@ void chooseQuest(Story &story)
    printQuests(story);
    cout << "Your choice: ";
    cin >> questIndex;
+   cout << "You have chosen to " << story.quests[questIndex - 1].name << endl;
    questIndex--;
    if (!story.quests[questIndex + 1].completed)
    {
