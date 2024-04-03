@@ -1,0 +1,10 @@
+Slay the Dragon,Defeat the mighty dragon terrorizing the village,10,1000,false
+Rescue the Princess,Save the princess from the evil wizard's tower,8,800,false
+Gather Rare Herbs,Collect a set of rare herbs from the forbidden forest,6,600,false
+Escort the Merchant,Protect the merchant caravan from bandits,5,500,false
+Investigate the Ruins,Explore the ancient ruins and uncover its secrets,9,900,false
+Deliver a Message,Deliver an important message to the neighboring kingdom,3,300,false
+Slay the Goblin King,Defeat the goblin king and bring peace to the realm,12,1200,false
+Recover the Artifact,Retrieve the stolen artifact from the thieves' hideout,7,700,false
+Clear the Mines,Clear the abandoned mines of monsters,4,400,false
+Negotiate a Treaty,Negotiate a peace treaty between two warring factions,11,1100,false

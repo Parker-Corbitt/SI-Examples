@@ -1,0 +1,10 @@
+Tame the Unicorn,Befriend the elusive unicorn in the enchanted glade,9,900,false
+Solve the Riddle,Solve the sphinx's riddle to gain access to the treasure,6,600,false
+Seal the Portal,Close the portal to the demon realm before it's too late,12,1200,false
+Rescue the Miners,Save the trapped miners from the collapsed mine,7,700,false
+Recover the Crown,Retrieve the stolen crown of the rightful heir,10,1000,false
+Infiltrate the Cult,Infiltrate the cult and expose their sinister plans,8,800,false
+Slay the Kraken,Defeat the giant kraken terrorizing the coastal villages,11,1100,false
+Escort the Diplomat,Protect the diplomat on a crucial peace mission,5,500,false
+Gather Rare Reagents,Collect rare alchemical reagents for a powerful potion,4,400,false
+Investigate the Haunting,Investigate the haunted mansion and put the spirits to rest,6,600,false

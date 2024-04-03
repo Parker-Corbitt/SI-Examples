@@ -1,0 +1,10 @@
+Capture the Warlord,Capture the notorious warlord and bring him to justice,10,1000,false
+Recover the Heirloom,Retrieve the family heirloom from the thieves' den,6,600,false
+Break the Curse,Break the curse afflicting the kingdom,12,1200,false
+Rescue the Druids,Save the druids from the corrupted treants,8,800,false
+Slay the Manticore,Defeat the deadly manticore terrorizing the trade routes,9,900,false
+Gather Rare Artifacts,Collect a set of rare artifacts for the museum,5,500,false
+Escort the Nobles,Protect the noble family during their journey,4,400,false
+Investigate the Conspiracy,Uncover the conspiracy threatening the kingdom,11,1100,false
+Recover the Tome,Retrieve the ancient tome from the forgotten library,7,700,false
+Seal the Rift,Close the rift to the shadow realm before it consumes everything,10,1000,false
