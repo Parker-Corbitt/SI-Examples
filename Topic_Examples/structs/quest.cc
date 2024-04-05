@@ -40,7 +40,7 @@ struct Player
    string name;
    vector<string> inventory;
    int level;
-   int health;
+   int health = 100;
 };
 
 vector<Quest> loadQuests(string filename);
