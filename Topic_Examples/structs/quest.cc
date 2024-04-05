@@ -124,40 +124,48 @@ void chooseQuest(Story &story, Player &player)
    // cout << "Level: " << player.level << '\t';
    // cout << "Health: " << player.health << endl;
 
-   cout << "You are currently in " << story.title << endl << endl;
+   cout << "You are currently in " << story.title << endl
+        << endl;
    int questIndex;
    cout << "Choose a quest!" << endl;
    printQuests(story);
    cout << endl;
    cout << "Your choice: ";
    cin >> questIndex;
-   questIndex -= 1;
-   cout << "You have chosen to " << story.quests[questIndex].name << " which will inflict " << story.quests[questIndex].damage << " damage if failed" << endl;
-   if (!story.quests[questIndex].completed)
+   if (questIndex > story.quests.size() || questIndex < 1)
    {
-
-      if (tryQuest(story, questIndex))
-      {
-         story.quests[questIndex].completed = true;
-         story.completedQuests++;
-         printArt("ascii/ascii3.txt");
-      }
-      else
-      {
-         player.health -= story.quests[questIndex].damage;
-         if( player.health <= 0)
-         {
-            player.health = 0;
-         }
-         cout << "You have failed the quest and have taken " << story.quests[questIndex].damage << " points of damage!" << endl;
-         cout << "You have " << player.health << " health remaining." << endl;
-         // printArt("ascii/ascii4.txt");
-      }
+      cout << "Invalid choice!" << endl;
    }
    else
    {
-      cout << "You have already completed this quest!" << endl
-           << "The town sings your praises!" << endl;
+      questIndex -= 1;
+      cout << "You have chosen to " << story.quests[questIndex].name << " which will inflict " << story.quests[questIndex].damage << " damage if failed" << endl;
+      if (!story.quests[questIndex].completed)
+      {
+
+         if (tryQuest(story, questIndex))
+         {
+            story.quests[questIndex].completed = true;
+            story.completedQuests++;
+            printArt("ascii/ascii3.txt");
+         }
+         else
+         {
+            player.health -= story.quests[questIndex].damage;
+            if (player.health <= 0)
+            {
+               player.health = 0;
+            }
+            cout << "You have failed the quest and have taken " << story.quests[questIndex].damage << " points of damage!" << endl;
+            cout << "You have " << player.health << " health remaining." << endl;
+            // printArt("ascii/ascii4.txt");
+         }
+      }
+      else
+      {
+         cout << "You have already completed this quest!" << endl
+              << "The town sings your praises!" << endl;
+      }
    }
    return;
 }
@@ -177,8 +185,8 @@ bool tryQuest(Story &story, int questIndex)
    srand(time(0));                     // seed the random number generator
    int randomNumber = rand() % 10 + 1; // generate a random number between 1 and 10
 
-   //randomNumber is the difficulty modifier
-   if (randomNumber <= 7)
+   // randomNumber is the difficulty modifier, higher = harder
+   if (randomNumber <= 2)
    {
       return false; // quest fails
    }
