@@ -23,6 +23,7 @@ struct Quest
    int recommendedLevel;
    int reward;
    bool completed;
+   int damage;
 };
 
 struct Story
@@ -34,8 +35,16 @@ struct Story
    bool completed;
 };
 
+struct Player
+{
+   string name;
+   vector<string> inventory;
+   int level;
+   int health;
+};
+
 vector<Quest> loadQuests(string filename);
-void chooseQuest(Story &story);
+void chooseQuest(Story &story, Player &player);
 bool tryQuest(Story &story, int questIndex);
 
 void printArt(string filename);
@@ -43,9 +52,10 @@ void printQuests(Story &story);
 
 int main(int argc, char const *argv[])
 {
-   printArt("ascii/title.txt");
-   printArt("ascii/ascii.txt");
+   // printArt("ascii/title.txt");
+   // printArt("ascii/ascii.txt");
    Story actOne;
+   Player player;
    actOne.quests = loadQuests("act1.txt");
    actOne.title = "Act 1";
    actOne.description = "The beginning of your journey.";
@@ -53,7 +63,15 @@ int main(int argc, char const *argv[])
 
    while (actOne.completedQuests < actOne.quests.size())
    {
-      chooseQuest(actOne);
+      if (player.health > 0)
+      {
+         chooseQuest(actOne, player);
+      }
+      else
+      {
+         printArt("ascii/ascii4.txt");
+         exit(0);
+      }
    }
 
    return 0;
@@ -88,9 +106,10 @@ vector<Quest> loadQuests(string filename)
       ss >> quest.reward;
       ss.ignore(); // Ignore the comma
 
-      getline(ss, completed_str);
+      getline(ss, completed_str, ',');
 
       quest.completed = (completed_str == "true");
+      ss >> quest.damage;
 
       quests.push_back(quest);
    }
@@ -99,28 +118,40 @@ vector<Quest> loadQuests(string filename)
    return quests;
 }
 
-void chooseQuest(Story &story)
+void chooseQuest(Story &story, Player &player)
 {
+   // cout << player.name << endl;
+   // cout << "Level: " << player.level << '\t';
+   // cout << "Health: " << player.health << endl;
+
+   cout << "You are currently in " << story.title << endl << endl;
    int questIndex;
    cout << "Choose a quest!" << endl;
    printQuests(story);
+   cout << endl;
    cout << "Your choice: ";
    cin >> questIndex;
-   cout << "You have chosen to " << story.quests[questIndex - 1].name << endl;
-   questIndex--;
-   if (!story.quests[questIndex + 1].completed)
+   questIndex -= 1;
+   cout << "You have chosen to " << story.quests[questIndex].name << " which will inflict " << story.quests[questIndex].damage << " damage if failed" << endl;
+   if (!story.quests[questIndex].completed)
    {
 
       if (tryQuest(story, questIndex))
       {
-         story.quests[questIndex + 1].completed = true;
+         story.quests[questIndex].completed = true;
          story.completedQuests++;
          printArt("ascii/ascii3.txt");
       }
       else
       {
-         printArt("ascii/ascii4.txt");
-         exit(0);
+         player.health -= story.quests[questIndex].damage;
+         if( player.health <= 0)
+         {
+            player.health = 0;
+         }
+         cout << "You have failed the quest and have taken " << story.quests[questIndex].damage << " points of damage!" << endl;
+         cout << "You have " << player.health << " health remaining." << endl;
+         // printArt("ascii/ascii4.txt");
       }
    }
    else
@@ -135,7 +166,7 @@ void printQuests(Story &story)
 {
    for (int i = 0; i < story.quests.size(); i++)
    {
-      cout << i + 1 << ". " << story.quests[i].name << endl;
+      cout << i + 1 << ". " << story.quests[i].name << " which will inflict " << story.quests[i].damage << " points of damage if failed." << endl;
       usleep(100000);
    }
    return;
@@ -146,7 +177,8 @@ bool tryQuest(Story &story, int questIndex)
    srand(time(0));                     // seed the random number generator
    int randomNumber = rand() % 10 + 1; // generate a random number between 1 and 10
 
-   if (randomNumber <= 5)
+   //randomNumber is the difficulty modifier
+   if (randomNumber <= 7)
    {
       return false; // quest fails
    }

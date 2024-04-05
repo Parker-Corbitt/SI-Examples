@@ -1,10 +1,10 @@
-Slay the Dragon,Defeat the mighty dragon terrorizing the village,10,1000,false
-Rescue the Princess,Save the princess from the evil wizard's tower,8,800,false
-Gather Rare Herbs,Collect a set of rare herbs from the forbidden forest,6,600,false
-Escort the Merchant,Protect the merchant caravan from bandits,5,500,false
-Investigate the Ruins,Explore the ancient ruins and uncover its secrets,9,900,false
-Deliver a Message,Deliver an important message to the neighboring kingdom,3,300,false
-Slay the Goblin King,Defeat the goblin king and bring peace to the realm,12,1200,false
-Recover the Artifact,Retrieve the stolen artifact from the thieves' hideout,7,700,false
-Clear the Mines,Clear the abandoned mines of monsters,4,400,false
-Negotiate a Treaty,Negotiate a peace treaty between two warring factions,11,1100,false
+Slay the Dragon,Defeat the mighty dragon terrorizing the village,10,1000,false,100
+Rescue the Princess,Save the princess from the evil wizard's tower,8,800,false,10
+Gather Rare Herbs,Collect a set of rare herbs from the forbidden forest,6,600,false,0
+Escort the Merchant,Protect the merchant caravan from bandits,5,500,false,10
+Hunt the Werewolf,Track and eliminate the werewolf in the haunted woods,12,1200,false,70
+Retrieve the Lost Artifact,Find and return the ancient artifact stolen by thieves,9,900,false,25
+Explore the Ancient Ruins,Uncover the secrets of the ancient ruins deep in the jungle,11,1100,false,20
+Defend the Fortress,Help the soldiers defend the fortress from an impending orc attack,14,1400,false,40
+Find the Hidden Treasure,Locate the hidden treasure rumored to be in the pirate's cove,10,1000,false,10
+Rescue the Kidnapped Scholar,Rescue the scholar kidnapped by goblins and return him safely,13,1300,false,30
