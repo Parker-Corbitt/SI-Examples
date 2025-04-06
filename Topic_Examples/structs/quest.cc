@@ -6,16 +6,19 @@
  */
 
 #include <iostream>
-#include <iomanip>
 #include <cstdlib>
-#include <random>
 #include <vector>
 #include <fstream>
 #include <unistd.h>
 #include <cstdlib>
 #include <ctime>
+#include <sstream>
+#include <limits>
 using namespace std;
 
+/**
+ * @brief A quest for the player to attempt
+ */
 struct Quest
 {
    string name;
@@ -26,6 +29,10 @@ struct Quest
    int damage;
 };
 
+/**
+ * @brief This structure represents part of a story, and the quests
+ * associated with that story
+ */
 struct Story
 {
    string title;
@@ -35,6 +42,9 @@ struct Story
    bool completed;
 };
 
+/**
+ * @brief The player object
+ */
 struct Player
 {
    string name;
@@ -43,8 +53,30 @@ struct Player
    int health = 100;
 };
 
+/**
+ * @brief loads all of the quests from a specified file into a vector of quests
+ * 
+ * @param filename the file to read from 
+ * @return vector<Quest> the loaded vector of quests
+ */
 vector<Quest> loadQuests(string filename);
+
+/**
+ * @brief Allows the user to choose a quest to attempt
+ * 
+ * @param story A defined "act" of the story
+ * @param player 
+ */
 void chooseQuest(Story &story, Player &player);
+
+/**
+ * @brief Determines if the user succeeds or fails
+ * 
+ * @param story The "act" the quest is a part of
+ * @param questIndex The index of the quest in the quest vector
+ * @return true - The player succeeded
+ * @return false - The player failed
+ */
 bool tryQuest(Story &story, int questIndex);
 
 void printArt(string filename);
@@ -52,7 +84,7 @@ void printQuests(Story &story);
 
 int main(int argc, char const *argv[])
 {
-   // printArt("ascii/title.txt");
+   printArt("ascii/title.txt");
    // printArt("ascii/ascii.txt");
    Story actOne;
    Player player;
@@ -132,9 +164,13 @@ void chooseQuest(Story &story, Player &player)
    cout << endl;
    cout << "Your choice: ";
    cin >> questIndex;
-   if (questIndex > story.quests.size() || questIndex < 1)
+
+   if (questIndex > story.quests.size() || questIndex < 1 || cin.fail())
    {
+      cin.clear();
+      cin.ignore(numeric_limits<streamsize>::max(), '\n');
       cout << "Invalid choice!" << endl;
+      return;
    }
    else
    {
