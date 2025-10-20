@@ -2,7 +2,7 @@
  *        @file: selection_sort.cc
  *      @author: Parker Corbitt
  *        @date: November 06, 2023
- *       @brief: Add Description
+ *       @brief: Implementation of selection sort and search algorithms
  */
 
 #include <iostream>
@@ -13,11 +13,29 @@ using namespace std;
 
 ///function prototypes
 
-void selectionSort(int arr[], int size);    //sorts an array using selection sort
+/**
+ * @brief Sorts an array using the selection sort algorithm.
+ *
+ * @param arr The array to be sorted.
+ * @param size The size of the array.
+ */
+void selectionSort(int arr[], int size);
 
+/**
+ * @brief Performs a linear search on an array.
+ * 
+ */
 void linearSearch();
 
-bool binarySearch(int arr[], int size, int target); //performs binary search on a sorted array
+/**
+ * @brief Performs a binary search on a sorted array.
+ *
+ * @param arr The sorted array to search.
+ * @param size The size of the array.
+ * @param target The value to search for.
+ * @return true if the target is found, false otherwise.
+ */
+bool binarySearch(int arr[], int size, int target);
 
 int main(int argc, char const *argv[]) {
 
